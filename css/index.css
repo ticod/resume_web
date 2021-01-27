@@ -1,0 +1,190 @@
+#first {
+  background: linear-gradient(90deg, crimson 50%, white 50%);
+  transition: 1s;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+
+  transition: .6s;
+  z-index: 0;
+
+  cursor: pointer;
+}
+
+.container h1 {
+  transition: .6s;
+}
+
+.container-left {
+  justify-content: flex-end;
+
+  background-color: crimson;
+  padding-right: 30px;
+  
+  width: 50%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+}
+
+.container-right {
+  justify-content: start;
+
+  background-color: white;
+  padding-left: 30px;
+  
+  width: 50%;
+  height: 100%;
+
+  top: 0;
+  left: 50%;
+}
+
+.container-left:hover {
+  animation: container_left_hover .6s ease forwards;
+  /* width: 60%;
+  transition: .6s; */
+}
+
+.container-left:hover h1 {
+  font-size: 7rem;
+  transition: .6s;
+}
+
+.container-right:hover {
+  animation: container_right_hover .6s ease forwards;
+  /* left: 40%;
+  width: 60%;
+  transition: .6s; */
+}
+
+.container-right:hover h1 {
+  font-size: 6rem;
+  transition: .6s;
+}
+
+
+h1 {
+  font-size: 5rem;
+  font-weight: 700;
+
+  position: relative;
+}
+
+#contact > h1::after {
+  position: relative;
+  top: 5rem;
+  left: -5rem;
+  font-size: 3rem;
+  content: "Contact"
+}
+
+#about > h1::after {
+  position: relative;
+  top: 5rem;
+  left: -5rem;
+  font-size: 3rem;
+  content: "About"
+}
+
+.container-left > h1 {
+  color: white;
+  justify-self: start;
+  animation: text_reveal_white .5s ease forwards;
+  animation-delay: 1.1s;
+}
+
+.container-right > h1 {
+  color: crimson;
+  justify-self: end;
+  animation: text_reveal_crimson .5s ease forwards;
+  animation-delay: 2.1s;
+}
+
+.container-left > h1:hover {
+  color: black;
+  transition: .6s;
+}
+
+.container-right > h1:hover {
+  color: black;
+  transition: .6s;
+}
+
+.container-left h1 .effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(0, 0, 0, 1);
+  animation: text_reveal_box 1s ease;
+  animation-delay: .3s;
+}
+
+.container-right h1 .effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: black;
+  animation: text_reveal_box 1s ease;
+  animation-delay: 1.3s;
+}
+
+@keyframes container_left_hover {
+  0% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+    width: 55%;
+  }
+}
+
+@keyframes container_right_hover {
+  0% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+    left: 45%;
+    width: 55%;
+  }
+}
+
+@keyframes text_reveal_box {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
+  }
+}
+
+@keyframes text_reveal_white {
+  100% {
+    color: white;
+  }
+}
+
+@keyframes text_reveal_crimson {
+  100% {
+    color: crimson;
+  }
+}
+
+@keyframes text_reveal_name {
+  100% {
+    color: crimson;
+    font-weight: 500;
+  }
+}
