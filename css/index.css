@@ -15,10 +15,6 @@
   cursor: pointer;
 }
 
-.container h1 {
-  transition: .6s;
-}
-
 .container-left {
   justify-content: flex-end;
 
@@ -122,7 +118,7 @@ h1 {
   left: 0;
   height: 100%;
   width: 0;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: white;
   animation: text_reveal_box 1s ease;
   animation-delay: .3s;
 }
@@ -133,7 +129,7 @@ h1 {
   left: 0;
   height: 100%;
   width: 0;
-  background-color: black;
+  background-color: crimson;
   animation: text_reveal_box 1s ease;
   animation-delay: 1.3s;
 }

@@ -2,20 +2,25 @@
   position: absolute;
   left: 0;
   right: 0;
-  width: 50%;
+  width: 55%;
   height: 100vh;
 
-  animation: ;
+  background-color: crimson;
+
+  animation: init 1s ease forwards;
+  transition: .5s;
+  z-index: -1;
 }
 
 body {
-  background-color: crimson;
-  transition: 1s;
+  cursor: pointer;
+  /* background-color: crimson; */
+  transition: .5s;
 }
 
-body:hover {
+body:hover #background {
   background-color: white;
-  transition: 1s;
+  transition: .5s;
 }
 
 h1 > a {
@@ -62,4 +67,10 @@ h2 {
 
 .intro {
   flex-direction: column;
+}
+
+@keyframes init {
+  100% {
+    width: 100%;
+  }
 }

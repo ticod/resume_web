@@ -1,11 +1,20 @@
 class App {
   constructor() {
+    const background = document.getElementById("background");
     const body = document.body;
 
-    console.log(body);
+    const backgroundChangeWidth = function(ms) {
+      new Promise((resolve) => {
+        setTimeout(() => {
+          background.style.width = "50%";
+        }, ms);
+      });
+    }
 
     body.addEventListener('click', function() {
-      location.href = 'index.html';
+      backgroundChangeWidth(500).then(function() {
+        location.href = 'index.html';
+      });
     });
   }
 }
