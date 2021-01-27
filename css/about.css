@@ -1,6 +1,23 @@
+#background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 45%;
+  height: 100vh;
+
+  background-color: crimson;
+
+  animation: init 1s ease forwards;
+  z-index: -1;
+}
+
 #box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  opacity: 0;
+  animation: init_box 1s ease forwards;
+  animation-delay: .4s;
 }
 
 a {
@@ -69,4 +86,19 @@ a {
 
 .item:hover .background {
   visibility: visible;
+}
+
+@keyframes init {
+  50% {
+    width: 25%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes init_box {
+  100% {
+    opacity: 1;
+  }
 }
