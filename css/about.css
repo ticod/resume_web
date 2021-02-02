@@ -1,31 +1,61 @@
+body {
+  background-color:var(--main-color-black);
+  z-index: -2;
+  animation: init_body .5s ease forwards;
+  animation-delay: 1s;
+
+  overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 #background {
   position: absolute;
   left: 0;
   right: 0;
-  width: 45%;
+  width: 40%;
   height: 100vh;
 
-  background-color: crimson;
+  background-color: var(--main-color-yellow);
 
   animation: init 1s ease forwards;
-  z-index: -1;
+  z-index: -2;
 }
 
 #box {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(3, 1fr); */
 
   opacity: 0;
   animation: init_box 1s ease forwards;
   animation-delay: .4s;
 }
 
+#home-button {
+  border-color :var(--main-color-yellow);
+  color: var(--main-color-yellow);
+  transition: .5s;
+}
+
+#home-button:hover > .effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--main-color-yellow);
+  animation: button_hover .5s ease;
+}
+
 a {
-  color: black;
+  color: var(--main-color-black);
 }
 
 .item {
-  width: 100%;
+  width: 98%;
   height: 100%;
   
   display: flex;
@@ -39,7 +69,20 @@ a {
   background-position: center center;
 
   opacity: .3;
+
+  transform: perspective(500px) rotateY(-15deg);
   transition: .2s;
+
+  text-transform: uppercase;
+}
+
+.item:hover {
+  opacity: 1;
+  transition: .2s;
+  transform: rotateY(0deg);
+  z-index: 10;
+
+  width: 100%;
 }
 
 .item > h1, .item > h2 {
@@ -54,9 +97,14 @@ a {
   z-index: 1;
 }
 
-.item:nth-child(2) {
+.item:nth-child(1) {
   background-image: url(../imgs/notebook.jpg);
   color: crimson;
+}
+
+.item:nth-child(2) {
+  background-image: url(../imgs/simplog.PNG);
+  color: black;
 }
 
 .item:nth-child(3) {
@@ -79,18 +127,14 @@ a {
   color: white;
 }
 
-.item:hover {
-  opacity: 1;
-  transition: .2s;
-}
-
-.item:hover .background {
-  visibility: visible;
+.item:nth-child(7) {
+  background-image: url(../imgs/smartcart2.jpg);
+  color: white;
 }
 
 @keyframes init {
   50% {
-    width: 25%;
+    width: 20%;
   }
   100% {
     width: 0;
@@ -100,5 +144,25 @@ a {
 @keyframes init_box {
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes init_body {
+  100% {
+    background-color: var(--main-color-black);
+    opacity: 1;
+    z-index: -5;
+
+  }
+}
+
+@keyframes button_hover {
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
   }
 }

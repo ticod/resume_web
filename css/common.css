@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
+:root {
+  --main-color-yellow: #f9d142;
+  --main-color-black: #292826;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -29,6 +34,17 @@ a {
   align-items: center;
 
   z-index: 1;
+}
+
+#home-button {
+  position: absolute;
+  left: 3%;
+  top: 3%;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 1px solid var(--main-color-black);
+  padding: 0.5rem 2rem;
+  z-index: 20;
 }
 
 .content-hidden {
