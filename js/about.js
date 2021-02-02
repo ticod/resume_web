@@ -17,6 +17,15 @@ class App {
     this.moveNewTab(dotmatrixBoard, "https://youtu.be/kcEIQV6JAFI");
     this.moveNewTab(weatherAlert, "https://youtu.be/JjEWuQfeqW4");
     this.moveNewTab(smartcart, "https://github.com/ticod");
+
+    // TODO: 프로젝트 별 괜찮은 사진 구하면 아래 소스로 변경 예정
+    // this.hoverChangeImage(techStack, "notebook.jpg");
+    // this.hoverChangeImage(simplog, "simplog.PNG");
+    // this.hoverChangeImage(board, "phpboard.png");
+    // this.hoverChangeImage(smartDoorLock, "doorlock.PNG");
+    // this.hoverChangeImage(dotmatrixBoard, "dotboard.jpg");
+    // this.hoverChangeImage(weatherAlert, "weatheralert.jpg");
+    // this.hoverChangeImage(smartcart, "smartcart2.jpg");
   }
 
   moveIdPage(id) {
@@ -30,6 +39,12 @@ class App {
       window.open(url);
     })
   }
+
+  // hoverChangeImage(id, imageUrl) {
+  //   id.addEventListener('mouseover', function() {
+  //     document.body.style.backgroundImage = "url(../imgs/" + imageUrl;
+  //   })
+  // }
 
 }
 
